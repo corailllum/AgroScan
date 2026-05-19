@@ -74,8 +74,8 @@ Cela créera le dossier `PlantVillage_split/` avec la structure `train/`, `valid
 
 Les deux scripts suivent la même structure en deux phases :
 
-- **Phase 1** — seule la couche de classification finale est entraînée (poids du backbone gelés)
-- **Phase 2** — fine-tuning des derniers blocs convolutionnels avec un taux d'apprentissage réduit
+- **Phase 1** : seule la couche de classification finale est entraînée (poids du backbone gelés)
+- **Phase 2** : fine-tuning des derniers blocs convolutionnels avec un taux d'apprentissage réduit
 
 À chaque époque, la loss et l'accuracy sont affichées pour le train et la validation.
 Le meilleur modèle (meilleure val accuracy) est sauvegardé automatiquement dans `models/`.
