@@ -8,6 +8,7 @@ TRAIN_RATIO = 0.70
 VAL_RATIO = 0.15
 TEST_RATIO = 0.15
 SEED = 42
+
 #reset au cas où
 if os.path.exists(DESTINATION):
     print(f"️ Dossier existant supprimé : {DESTINATION}")
