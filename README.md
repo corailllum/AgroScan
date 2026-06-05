@@ -97,3 +97,12 @@ python train_efficientNet.py
 Modèle sauvegardé : `models/efficientnet_b0_plantvillage.pth`
 
 ---
+
+
+## TO DO : 
+
+- Comparaison EfficientNet-BO et ResNet-50 avec le nouveau dataset
+- Chercher SI on trouve un nouveau dataset (plantDoc ??) et réentraîner en combinant les Dataset
+- Rendre plus esthétique l'app
+- Finir la liste des traitements des maladies des plantes
+- Rendre plus ésthétique l'alerte seuil bas
