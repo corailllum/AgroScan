@@ -1,0 +1,122 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run AgroScan Streamlit app",
+			"type": "shell",
+			"command": "c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/python.exe -m streamlit run src/app.py",
+			"args": [],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run AgroScan Streamlit app",
+			"type": "shell",
+			"command": "c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA\\AgroScan/.venv/bin/python.exe -m streamlit run src/app.py",
+			"args": [],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check streamlit install",
+			"type": "shell",
+			"command": "c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/python.exe -m pip show streamlit",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Inspect python environment",
+			"type": "shell",
+			"command": "c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/python.exe -c \"import sys; print(sys.executable); print(sys.version); import site; print(site.getsitepackages())\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Inspect python environment",
+			"type": "shell",
+			"command": "c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/python.exe -c 'import sys; print(sys.executable); print(sys.version); import site; print(site.getsitepackages())'",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check environment",
+			"type": "shell",
+			"command": "c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/python.exe check_env.py",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Bootstrap pip in venv",
+			"type": "shell",
+			"command": "c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/python.exe -m ensurepip --upgrade",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install app dependencies",
+			"type": "shell",
+			"command": "c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/python.exe -m pip install streamlit opencv-python numpy pillow",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install dependencies in activated venv",
+			"type": "shell",
+			"command": "& c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/Activate.ps1; python -m pip install streamlit opencv-python numpy pillow",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check global python",
+			"type": "shell",
+			"command": "python -c \"import sys; print(sys.executable); import streamlit; print('streamlit', streamlit.__version__)\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check global python",
+			"type": "shell",
+			"command": "python -c 'import sys; print(sys.executable); import streamlit; print(\"streamlit\", streamlit.__version__)'",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check global python",
+			"type": "shell",
+			"command": "python check_global.py",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install lightweight dependencies",
+			"type": "shell",
+			"command": "& c:/Users/chanudet/Documents/Polytech/uqac/trimestre3/AtelierIA/AgroScan/.venv/bin/Activate.ps1; python -m pip install --only-binary=:all: streamlit opencv-python-headless numpy pillow",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

@@ -4,3 +4,4 @@ archive(1).zip
 PlantVillage_split/
 *.JPG
 *.png
+models/resnet50_plantvillage_augm.pth
