@@ -1,0 +1,172 @@
+{
+  "Apple___Apple_scab": {
+    "disease": "Tavelure du pommier",
+    "early_actions": [
+      "Retirer les feuilles présentant des taches visibles",
+      "Éviter l’arrosage sur le feuillage",
+      "Améliorer l’aération autour de la plante",
+      "Surveiller l’évolution des nouvelles feuilles"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Apple___Black_rot": {
+    "disease": "Pourriture noire du pommier",
+    "early_actions": [
+      "Retirer fruits ou feuilles visiblement atteints",
+      "Limiter l’humidité excessive",
+      "Éviter les blessures sur les branches",
+      "Observer la progression des symptômes"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Apple___Cedar_apple_rust": {
+    "disease": "Rouille du pommier",
+    "early_actions": [
+      "Supprimer les feuilles avec taches orange",
+      "Aérer la végétation",
+      "Éviter humidité stagnante",
+      "Surveiller les nouvelles pousses"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Apple___healthy": {
+    "disease": "Plante saine",
+    "early_actions": [
+      "Plante saine, pas de traitement"
+    ]
+  },
+
+  "Blueberry___healthy": {
+    "disease": "Plante saine",
+    "early_actions": [
+      "Plante saine, pas de traitement"
+    ]
+  },
+
+  "Cherry___Powdery_mildew": {
+    "disease": "Oïdium du cerisier",
+    "early_actions": [
+      "Retirer les feuilles avec dépôt blanc",
+      "Améliorer la circulation d’air",
+      "Éviter l’arrosage sur les feuilles",
+      "Surveiller les jeunes pousses"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Cherry___healthy": {
+    "disease": "Plante saine",
+    "early_actions": [
+      "Plante saine, pas de traitement"
+    ]
+  },
+
+  "Corn___Cercospora_leaf_spot Gray_leaf_spot": {
+    "disease": "Taches grises du maïs",
+    "early_actions": [
+      "Retirer les feuilles les plus touchées",
+      "Réduire l’humidité",
+      "Espacer les plants si nécessaire",
+      "Surveiller l’évolution des taches"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Corn___Common_rust": {
+    "disease": "Rouille commune du maïs",
+    "early_actions": [
+      "Surveiller les pustules orange",
+      "Limiter arrosage sur feuilles",
+      "Éviter excès d’humidité",
+      "Retirer feuilles très atteintes"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Corn___Northern_Leaf_Blight": {
+    "disease": "Brûlure foliaire du maïs",
+    "early_actions": [
+      "Retirer feuilles atteintes",
+      "Améliorer circulation d’air",
+      "Éviter stress hydrique",
+      "Surveiller la propagation"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Corn___healthy": {
+    "disease": "Plante saine",
+    "early_actions": [
+      "Plante saine, pas de traitement"
+    ]
+  },
+
+  "Grape___Black_rot": {
+    "disease": "Pourriture noire de la vigne",
+    "early_actions": [
+      "Retirer grappes atteintes",
+      "Limiter humidité sur feuillage",
+      "Aérer la vigne",
+      "Surveiller les fruits"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Grape___Leaf_blight": {
+    "disease": "Brûlure des feuilles de vigne",
+    "early_actions": [
+      "Supprimer feuilles atteintes",
+      "Éviter arrosage sur feuillage",
+      "Améliorer ventilation",
+      "Observer extension des symptômes"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Grape___healthy": {
+    "disease": "Plante saine",
+    "early_actions": [
+      "Plante saine, pas de traitement"
+    ]
+  },
+
+  "Tomato___Late_blight": {
+    "disease": "Mildiou tardif de la tomate",
+    "early_actions": [
+      "Retirer feuilles avec taches brunes",
+      "Éviter arrosage sur feuilles",
+      "Améliorer aération",
+      "Surveiller propagation rapide"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Tomato___Early_blight": {
+    "disease": "Alternariose de la tomate",
+    "early_actions": [
+      "Retirer feuilles inférieures atteintes",
+      "Limiter humidité",
+      "Pailler le sol",
+      "Surveiller évolution"
+    ],
+    "note": "Consulter un spécialiste pour un traitement plus approfondi"
+  },
+
+  "Tomato___healthy": {
+    "disease": "Plante saine",
+    "early_actions": [
+      "Plante saine, pas de traitement"
+    ]
+  },
+
+  "Background_without_leaves": {
+    "disease": "Image invalide",
+    "early_actions": [
+      "Reprendre une image centrée sur une feuille",
+      "S'assurer que la plante est visible"
+    ]
+  }
+}
