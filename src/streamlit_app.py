@@ -246,48 +246,48 @@ def render_app(model_path: str, title: str, accent: str):
         st.divider()
 
         if confidence < SEUIL_CONFIANCE:
-            st.warning("Score de confiance insuffisant (seuil de 75 %). Le diagnostic n'est pas affiché tant que la confiance n'est pas suffisante.")
+            st.warning("Score de confiance insuffisant (seuil de 75 %). Le diagnostic est affiché à titre informatif, mais il faut l’interpréter avec prudence.")
             st.info("Vous pouvez augmenter le seuil à 80 % dans le code si vous voulez une validation encore plus stricte.")
         else:
-            st.subheader("Résumé du diagnostic")
-
-            result_col, confidence_col = st.columns([2, 1])
-            with result_col:
-                st.markdown(
-                    f"""
-                    <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.25); border-radius: 18px; padding: 16px 18px; margin-bottom: 12px;">
-                        <div style="font-size: 0.92rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.16em;">Diagnostic</div>
-                        <div style="font-size: 1.35rem; font-weight: 700; color: #ecfccb; line-height: 1.35; white-space: normal; overflow-wrap: anywhere;">{class_name}</div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
-
-            with confidence_col:
-                st.markdown(
-                    f"""
-                    <div style="background: rgba(20, 83, 45, 0.92); border: 1px solid rgba(134, 239, 172, 0.35); border-radius: 18px; padding: 16px 18px; margin-bottom: 12px;">
-                        <div style="font-size: 0.92rem; color: #dcfce7; text-transform: uppercase; letter-spacing: 0.16em;">Confiance</div>
-                        <div style="font-size: 1.6rem; font-weight: 800; color: #fde68a; text-shadow: 0 0 8px rgba(253, 230, 138, 0.25);">{confidence * 100:.1f}%</div>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
-
             st.success("Analyse terminée — la prédiction semble cohérente avec le niveau de confiance observé.")
 
-            # Charger le JSON de traitements et afficher les actions précoces si disponibles
-            try:
-                treatments_path = Path(__file__).resolve().parent / "traitement.json"
-                if treatments_path.exists():
-                    with open(treatments_path, "r", encoding="utf8") as f:
-                        treatments = json.load(f)
-                else:
-                    treatments = {}
-            except Exception:
-                treatments = {}
+        st.subheader("Résumé du diagnostic")
 
-            if class_key in treatments:
+        result_col, confidence_col = st.columns([2, 1])
+        with result_col:
+            st.markdown(
+                f"""
+                <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.25); border-radius: 18px; padding: 16px 18px; margin-bottom: 12px;">
+                    <div style="font-size: 0.92rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.16em;">Diagnostic</div>
+                    <div style="font-size: 1.35rem; font-weight: 700; color: #ecfccb; line-height: 1.35; white-space: normal; overflow-wrap: anywhere;">{class_name}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        with confidence_col:
+            st.markdown(
+                f"""
+                <div style="background: rgba(20, 83, 45, 0.92); border: 1px solid rgba(134, 239, 172, 0.35); border-radius: 18px; padding: 16px 18px; margin-bottom: 12px;">
+                    <div style="font-size: 0.92rem; color: #dcfce7; text-transform: uppercase; letter-spacing: 0.16em;">Confiance</div>
+                    <div style="font-size: 1.6rem; font-weight: 800; color: #fde68a; text-shadow: 0 0 8px rgba(253, 230, 138, 0.25);">{confidence * 100:.1f}%</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        # Charger le JSON de traitements et afficher les actions précoces si disponibles
+        try:
+            treatments_path = Path(__file__).resolve().parent / "traitement.json"
+            if treatments_path.exists():
+                with open(treatments_path, "r", encoding="utf8") as f:
+                    treatments = json.load(f)
+            else:
+                treatments = {}
+        except Exception:
+            treatments = {}
+
+        if class_key in treatments:
                 data = treatments[class_key]
                 early = data.get("early_actions", [])
                 note = data.get("note")
