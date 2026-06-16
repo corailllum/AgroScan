@@ -12,7 +12,7 @@ Université du Québec à Chicoutimi (UQAC)
 
 AgroScan AI est un assistant de diagnostic visuel.
 À partir d'une photo de feuille, l'application identifie si la plante est saine ou malade,
-retourne un score de confiance et met en évidence la zone suspecte via une carte Grad-CAM.
+retourne un score de confiance, une débuts de traitement et met en évidence la zone suspecte via une carte Grad-CAM.
 
 ---
 
@@ -26,16 +26,28 @@ AgroScan/
 │
 ├── models/                         # Modèles entraînés sauvegardés
 │   ├── resnet50_plantvillage.pth
+│   ├── resnet50_mix_plantdoc.pth
+│   ├── resnet50_plantvillage_augm.pth
 │   └── efficientnet_b0_plantvillage.pth
 │
-├── Rapport et présentations/       # Documents LaTeX, rapports, PDF, diaporamas
+├── Rapport et présentations/       
 │
 ├── src/
+│   ├── app.py
+│   ├── app2.py
+│   ├── app3.py
+│   ├── comparaison_modeles.py
 │   ├── nettoyage.py
+│   ├── streamlit_app.py
 │   ├── train_resnet.py
-│   ├── train_efficientNet.py
-│   └── visudata.ipynb
+│   ├── train_efficientnet.py
+│   ├── train_resnet_vill_doc.py
+│   ├── train_resnet.py
+│   ├── train.py
+│   ├── visudata.ipynb
+│   └── traitement.json
 │
+├── requirement.txt
 └── README.md
 
 ```
@@ -43,6 +55,8 @@ AgroScan/
 > **Note :** les dossiers `dataset/` et `PlantVillage_split/` ne sont pas versionnés sur Git
 > car ils sont trop volumineux. Voir la section **Installation** pour les recréer.
 
+
+Nous avons décidées de garder toutes les versions de l'application car cela permet de voir l'evolution de l'application au cours de ça conception.
 ---
 
 ## Installation
@@ -50,7 +64,7 @@ AgroScan/
 ### Dépendances
 
 ```bash
-pip install torch torchvision scikit-learn numpy
+pip install requirements.txt
 ```
 
 ### Préparer le dataset
@@ -60,7 +74,7 @@ pip install torch torchvision scikit-learn numpy
 
 2. Placer le dossier téléchargé dans `dataset/`
 
-3. Lancer le script de split :
+3. Lancer le script :
 
 ```bash
 python nettoyage.py
@@ -96,11 +110,26 @@ python train_efficientNet.py
 
 Modèle sauvegardé : `models/efficientnet_b0_plantvillage.pth`
 
+ATTENTION : des modèles sont déjà prêts à être utilisés pour l'application. Vous n'êtes pas obligée de relancer un entraînement. 
+
+
+## Lancement de l'application 
+
+Plusieurs versions de l'application sont disponibles, avec différents modèles que nous avons mis en place. 
+
+### Version Final
+```bash
+python -m streamlit run src/app3.py
+```
+
+### Beta
+```bash
+python -m streamlit run src/app2.py
+```
+
+### Alpha 
+```bash
+python -m streamlit run src/app.py
+```
 ---
 
-
-## TO DO : 
-
-- Comparaison EfficientNet-BO et ResNet-50 avec le nouveau dataset
-- Chercher SI on trouve un nouveau dataset ([fieldPlant ??](https://www.kaggle.com/datasets/bloox2/fieldplant) ??) et fine tuner une deuxième fois dessus
-- Finir la liste des traitements des maladies des plantes
