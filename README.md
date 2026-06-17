@@ -3,6 +3,8 @@
 Projet réalisé dans le cadre du cours **8INF934 : Atelier pratique en intelligence artificielle I**  
 Université du Québec à Chicoutimi (UQAC)
 
+Tous les fichiers, rapport, présentations, vidéo et fiche techniques sont dans le dossier "Rapport et présentation"
+
 **Étudiantes :** Charlotte Chanudet & Mahaut Galice  
 **Encadrant :** Julien Maitre
 
