@@ -69,9 +69,9 @@ pip install requirements.txt
 
 ### Lancement de l'application 
 
-Plusieurs versions de l'application sont disponibles, avec différents modèles que nous avons mis en place. 
+Plusieurs versions de l'application sont disponibles, avec les différents modèles que nous avons mis en place. 
 
-#### Version Final
+#### Version Finale
 ```bash
 python -m streamlit run src/app3.py
 ```
@@ -86,7 +86,7 @@ python -m streamlit run src/app2.py
 python -m streamlit run src/app.py
 ```
 
-### Réntrainement du model
+### Ré-entrainement du modèle
 #### Préparer le dataset
 
 1. Télécharger PlantVillage via TensorFlow Datasets :
@@ -111,7 +111,7 @@ Cela créera le dossier `PlantVillage_split/` avec la structure `train/`, `valid
 ```bash
 python train_resnet_vill_doc.py
 ```
-Cela réparti les images de plant doc dans les dossiers `train/`, `validation/`, `test/`.
+Cela répartira les images de plant doc dans les dossiers `train/`, `validation/`, `test/`. avant d'entraîner les modèles
 
 ---
 
@@ -147,13 +147,13 @@ ATTENTION : des modèles sont déjà prêts à être utilisés pour l'applicatio
 
 ## Explication de l'architecture du model
 
-Pour mettre en place notre model, nous avons choisi de prendre un model préxistant, le ResNet-50. 
-nous avons par la suite fine tunée le modele avec un dataset Plantevillage augmentée. nous avons pour cela fais les modification de donnée suivant :
-- égalisation du nombre d'image
-- retrait des plante qui non que des plante saine ou que des plante malade
-- ajout de bruit et de fond colorée pour simulée des fond differents
-- ajout des image de plant doc afin d'avoir des image en milieux naturel
-- rotation, resize des differentes image
+Pour mettre en place notre model, nous avons choisi de prendre un modèle préxistant, le ResNet-50. 
+Nous avons par la suite fine tuné le modele avec un dataset Plantevillage augmentée. nous avons pour cela fais les modification de données suivantes :
+- égalisation du nombre d'images
+- retrait des plante qui ne représentent que des plantes saines ou que des plantes malades
+- ajout de bruit et de fonds colorés pour simuler des fonds differents
+- ajout des images de plant doc afin d'avoir des images en milieux naturels
+- rotation, resize des differentes images
 
 
 
