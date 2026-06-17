@@ -67,7 +67,27 @@ Nous avons décidées de garder toutes les versions de l'application car cela pe
 pip install requirements.txt
 ```
 
-### Préparer le dataset
+### Lancement de l'application 
+
+Plusieurs versions de l'application sont disponibles, avec différents modèles que nous avons mis en place. 
+
+#### Version Final
+```bash
+python -m streamlit run src/app3.py
+```
+
+#### Beta
+```bash
+python -m streamlit run src/app2.py
+```
+
+#### Alpha 
+```bash
+python -m streamlit run src/app.py
+```
+
+### Réntrainement du model
+#### Préparer le dataset
 
 1. Télécharger PlantVillage via TensorFlow Datasets :
    https://www.tensorflow.org/datasets/catalog/plant_village
@@ -79,12 +99,23 @@ pip install requirements.txt
 ```bash
 python nettoyage.py
 ```
-
 Cela créera le dossier `PlantVillage_split/` avec la structure `train/`, `validation/`, `test/`.
+
+4. Télécharger PlantDoc sur kaggle :
+    https://www.kaggle.com/datasets/nirmalsankalana/plantdoc-dataset 
+
+5. Placer le dossier téléchargé dans `dataset/`
+
+6. Lancer le script :
+
+```bash
+python train_resnet_vill_doc.py
+```
+Cela réparti les images de plant doc dans les dossiers `train/`, `validation/`, `test/`.
 
 ---
 
-## Entraînement des modèles
+### Entraînement des modèles
 
 Les deux scripts suivent la même structure en deux phases :
 
@@ -112,24 +143,18 @@ Modèle sauvegardé : `models/efficientnet_b0_plantvillage.pth`
 
 ATTENTION : des modèles sont déjà prêts à être utilisés pour l'application. Vous n'êtes pas obligée de relancer un entraînement. 
 
-
-## Lancement de l'application 
-
-Plusieurs versions de l'application sont disponibles, avec différents modèles que nous avons mis en place. 
-
-### Version Final
-```bash
-python -m streamlit run src/app3.py
-```
-
-### Beta
-```bash
-python -m streamlit run src/app2.py
-```
-
-### Alpha 
-```bash
-python -m streamlit run src/app.py
-```
 ---
+
+## Explication de l'architecture du model
+
+Pour mettre en place notre model, nous avons choisi de prendre un model préxistant, le ResNet-50. 
+nous avons par la suite fine tunée le modele avec un dataset Plantevillage augmentée. nous avons pour cela fais les modification de donnée suivant :
+- égalisation du nombre d'image
+- retrait des plante qui non que des plante saine ou que des plante malade
+- ajout de bruit et de fond colorée pour simulée des fond differents
+- ajout des image de plant doc afin d'avoir des image en milieux naturel
+- rotation, resize des differentes image
+
+
+
 
